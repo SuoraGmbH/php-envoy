@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+    httpbin:
+        image: kennethreitz/httpbin
+        ports:
+            - "8000:80"
+    php-fpm:
+        build: my_project
+    nginx:
+        build: nginx
+        ports:
+            - "8001:80"
+    envoy:
+        build: envoy
+        ports:
+            - "8002:10000"
