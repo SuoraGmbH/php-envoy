@@ -30,6 +30,19 @@ class RequestController extends AbstractController
     }
 
     /**
+     * @Route("/error")
+     */
+    public function error(): Response
+    {
+        $response = $this->httpbinClient->request('GET', '/status/500');
+        $responseBody = $response->toArray();
+
+        return $this->json([
+            'data' => $responseBody,
+        ]);
+    }
+
+    /**
      * @Route("/delay")
      */
     public function delay(): Response
