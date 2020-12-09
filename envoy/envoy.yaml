@@ -30,7 +30,7 @@ static_resources:
                                                         cluster: service_httpbin
                                                         retry_policy:
                                                             retry_on: "5xx"
-                                                            num_retries: 0
+                                                            num_retries: 3
 
     clusters:
         -   name: service_httpbin
