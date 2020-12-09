@@ -17,6 +17,7 @@ framework:
         log: true
 
     http_client:
+        max_host_connections: 1000000
         scoped_clients:
             httpbin_client:
                 base_uri: 'http://httpbin'
